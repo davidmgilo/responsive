@@ -40,16 +40,28 @@ export default {
       humidity: '97%',
       wind: '4mph SW',
       pollen: 36,
-      forecasts: [
-        {'date': 'Monday', 'icon': 'stormy', 'hightemp': 45, 'lowtemp': 28},
-        {'date': 'Tuesday', 'icon': 'sunny', 'hightemp': 45, 'lowtemp': 28},
-        {'date': 'Wednesday', 'icon': 'sunny', 'hightemp': 45, 'lowtemp': 28},
-        {'date': 'Thursday', 'icon': 'partcloudy', 'hightemp': 45, 'lowtemp': 28},
-        {'date': 'Friday', 'icon': 'rainy', 'hightemp': 45, 'lowtemp': 28},
-        {'date': 'Saturday', 'icon': 'rainy', 'hightemp': 45, 'lowtemp': 28},
-        {'date': 'Sunday', 'icon': 'partcloudy', 'hightemp': 45, 'lowtemp': 28}
-      ]
+      forecasts: []
     }
+  },
+  methods: {
+    fetchWeather: function () {
+      this.$http.get('http://localhost:3000/weather').then((response) => {
+        console.log(response.data)
+        this.connecting = false
+        this.forecasts = response.data
+      }, (response) => {
+        console.log(response.data)
+        this.connecting = false
+        this.showConnectionError()
+        this.authorized = false
+      })
+    },
+    showConnectionError: function () {
+      // TOAST : toastjs TODO
+    }
+  },
+  created: function () {
+    this.fetchWeather()
   }
 }
 </script>

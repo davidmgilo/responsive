@@ -3,6 +3,11 @@
 import Vue from 'vue'
 import App from './App'
 
+import Axios from 'axios'
+
+window.axios = Axios
+Vue.prototype.$http = Axios
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

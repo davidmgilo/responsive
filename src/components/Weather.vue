@@ -16,8 +16,15 @@
         <div class="pollen">Pollen: {{pollen}}</div>
       </div>
     </div>
+    <div class="forecast">
+      <div class="forecast-day" v-for="forecast in forecasts">
+        <div class="date">{{forecast.date}}</div>
+        <div class="icon">{{forecast.icon}}</div>
+        <div class="high-temp">{{forecast.hightemp}}</div>
+        <div class="low-temp">{{forecast.lowtemp}}</div>
+      </div>
+    </div>
   </div>
-  
 </template>
 
 <script>
@@ -32,7 +39,16 @@ export default {
       precipitation: '100%',
       humidity: '97%',
       wind: '4mph SW',
-      pollen: 36
+      pollen: 36,
+      forecasts: [
+        {'date': 'Monday', 'icon': 'cloud', 'hightemp': 45, 'lowtemp': 28},
+        {'date': 'Tuesday', 'icon': 'sunny', 'hightemp': 45, 'lowtemp': 28},
+        {'date': 'Wednesday', 'icon': 'cloudy', 'hightemp': 45, 'lowtemp': 28},
+        {'date': 'Thursday', 'icon': 'rainy', 'hightemp': 45, 'lowtemp': 28},
+        {'date': 'Friday', 'icon': 'rainy', 'hightemp': 45, 'lowtemp': 28},
+        {'date': 'Saturday', 'icon': 'rainy', 'hightemp': 45, 'lowtemp': 28},
+        {'date': 'Sunday', 'icon': 'rainy', 'hightemp': 45, 'lowtemp': 28}
+      ]
     }
   }
 }

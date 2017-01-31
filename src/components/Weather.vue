@@ -5,7 +5,7 @@
     <div class="description">{{description}}</div>
     <div class="current">
       <div class="visual">
-        <div class="icon cloudy" alt="cloudy">cloud</div>
+        <div class="icon cloudy" alt="cloudy"></div>
         <div class="temp">{{temp}}</div>
         <div class="scale">º</div>
       </div>
@@ -19,7 +19,7 @@
     <div class="forecast">
       <div class="forecast-day" v-for="forecast in forecasts">
         <div class="date">{{forecast.date}}</div>
-        <div class="icon">{{forecast.icon}}</div>
+        <div v-bind:class="'icon ' + forecast.icon"></div>
         <div class="high-temp">{{forecast.hightemp}}</div>
         <div class="low-temp">{{forecast.lowtemp}}</div>
       </div>
@@ -41,13 +41,13 @@ export default {
       wind: '4mph SW',
       pollen: 36,
       forecasts: [
-        {'date': 'Monday', 'icon': 'cloud', 'hightemp': 45, 'lowtemp': 28},
+        {'date': 'Monday', 'icon': 'stormy', 'hightemp': 45, 'lowtemp': 28},
         {'date': 'Tuesday', 'icon': 'sunny', 'hightemp': 45, 'lowtemp': 28},
-        {'date': 'Wednesday', 'icon': 'cloudy', 'hightemp': 45, 'lowtemp': 28},
-        {'date': 'Thursday', 'icon': 'rainy', 'hightemp': 45, 'lowtemp': 28},
+        {'date': 'Wednesday', 'icon': 'sunny', 'hightemp': 45, 'lowtemp': 28},
+        {'date': 'Thursday', 'icon': 'partcloudy', 'hightemp': 45, 'lowtemp': 28},
         {'date': 'Friday', 'icon': 'rainy', 'hightemp': 45, 'lowtemp': 28},
         {'date': 'Saturday', 'icon': 'rainy', 'hightemp': 45, 'lowtemp': 28},
-        {'date': 'Sunday', 'icon': 'rainy', 'hightemp': 45, 'lowtemp': 28}
+        {'date': 'Sunday', 'icon': 'partcloudy', 'hightemp': 45, 'lowtemp': 28}
       ]
     }
   }
@@ -58,7 +58,7 @@ export default {
 <style scoped>
 
 .weather{
-  padding: 10px;
+  padding: 20px;
 }
 
 .location {
@@ -94,8 +94,49 @@ export default {
   width: 14.285%;
 }
 
+.visual .icon {
+  width:64px;
+  height: 64px;
+}
+
+.forecast-day .icon {
+  width: 64px;
+  height: 64px;
+}
+
+.forecast-day .date {
+  color: black;
+}
+
+.icon {
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .icon.cloudy {
- background-image: url('src/assets/cloudy');
+  background-image: url("../assets/cloudy.png");
+}
+
+.icon.sunny {
+  background-image: url("../assets/sunny.png");
+}
+
+.icon.stormy {
+  background-image: url("../assets/thunderstorms.png");
+}
+
+.icon.partcloudy {
+  background-image: url("../assets/partly_cloudy.png");
+}
+
+.icon.rainy {
+  background-image: url("../assets/rain_s_cloudy.png");
+}
+
+.icon.rain {
+  background-image: url("../assets/rain.png");
 }
 
 </style>

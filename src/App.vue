@@ -26,7 +26,7 @@ export default {
 body{
   font-family: Roboto, Arial;
   font-size: 1.2em;
-  color: #555;
+  color: #888;
 }
 
 </style>

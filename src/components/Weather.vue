@@ -58,7 +58,15 @@ export default {
 <style scoped>
 
 .weather{
+  width: 100%;
   padding: 20px;
+  box-shadow: 0 100px 100px rgba(0,0,0,0.2);
+}
+
+@media (min-width:700px){
+  .weather {
+    width: 700px;
+  }
 }
 
 .location {
@@ -106,6 +114,7 @@ export default {
 
 .forecast-day .date {
   color: black;
+  font-size: 0.5em;
 }
 
 .icon {
@@ -137,6 +146,26 @@ export default {
 
 .icon.rain {
   background-image: url("../assets/rain.png");
+}
+
+@media (max-width: 650px){
+  .location{
+    font-size: 5em;
+  }
+
+  .forecast-day {
+    display: block;
+    border-top: 1px solid black;
+    width:100%;
+  }
+  .forecast-day .date {
+    width: 50%;
+    text-align: left;
+  }
+
+  .date, .icon, .high-temp, .low-temp {
+    display: inline-block;
+  }
 }
 
 </style>

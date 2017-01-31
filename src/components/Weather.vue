@@ -5,7 +5,7 @@
     <div class="description">{{description}}</div>
     <div class="current">
       <div class="visual">
-        <div class="cloud">cloud</div>
+        <div class="icon cloudy" alt="cloudy">cloud</div>
         <div class="temp">{{temp}}</div>
         <div class="scale">º</div>
       </div>
@@ -63,6 +63,7 @@ export default {
 
 .location {
   font-size: 3em;
+  color: black;
 }
 
 .date {
@@ -86,6 +87,15 @@ export default {
 .text {
   float: right;
   width: 50%;
+}
+
+.forecast-day{
+  display: inline-block;
+  width: 14.285%;
+}
+
+.icon.cloudy {
+ background-image: url('src/assets/cloudy');
 }
 
 </style>

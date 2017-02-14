@@ -57,7 +57,7 @@ export default {
       })
     },
     showConnectionError: function () {
-      // TOAST : toastjs TODO
+      // TOAST : toastjs TODO!
     }
   },
   created: function () {

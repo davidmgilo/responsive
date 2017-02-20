@@ -9,7 +9,7 @@ window.axios = Axios
 Vue.prototype.$http = Axios
 
 import VueMaterial from 'vue-material'
-import 'vue-material/dist/vue-material.css'
+// import 'vue-material/dist/vue-material.css'
 
 Vue.use(VueMaterial)
 

@@ -8,6 +8,11 @@ import Axios from 'axios'
 window.axios = Axios
 Vue.prototype.$http = Axios
 
+import VueMaterial from 'vue-material'
+import 'vue-material/dist/vue-material.css'
+
+Vue.use(VueMaterial)
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

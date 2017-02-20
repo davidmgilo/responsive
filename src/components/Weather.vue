@@ -24,6 +24,9 @@
         <div class="low-temp">{{forecast.lowtemp}}</div>
       </div>
     </div>
+    <md-snackbar md-position="bottom center" ref="connectionError" md-duration="4000">
+      <span>Connection error. Ensure the database is open.</span>
+    </md-snackbar>
   </div>
 </template>
 
@@ -57,11 +60,11 @@ export default {
       })
     },
     showConnectionError: function () {
-      // TOAST : toastjs TODO!
+      this.$refs.connectionError.open()
     }
   },
   created: function () {
-   // this.fetchWeather()
+    this.fetchWeather()
   }
 }
 </script>

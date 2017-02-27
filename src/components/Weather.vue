@@ -20,8 +20,10 @@
       <div class="forecast-day" v-for="forecast in forecasts">
         <div class="date">{{forecast.date}}</div>
         <div v-bind:class="'icon ' + forecast.icon"></div>
-        <div class="high-temp">{{forecast.hightemp}}</div>
-        <div class="low-temp">{{forecast.lowtemp}}</div>
+        <div class="forecast-temperature">
+          <div class="high-temp">{{forecast.hightemp}}º</div>
+          <div class="low-temp">{{forecast.lowtemp}}º</div>
+        </div>
       </div>
     </div>
     <md-snackbar md-position="bottom center" ref="connectionError" md-duration="4000">
@@ -175,6 +177,18 @@ export default {
 
 .visual .scale, .visual .temp {
   vertical-align: top;
+}
+
+.forecast-day .high-temp, .forecast-day .low-temp {
+  display: inline-block;
+}
+
+.forecast-day .low-temp{
+  color: rgba(0,0,0,0.4);
+}
+
+.forecast-day .forecast-temperature {
+  text-align: center;
 }
 
 

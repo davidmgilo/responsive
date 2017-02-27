@@ -131,7 +131,7 @@ export default {
 
 .forecast-day .date {
   color: black;
-  font-size: 0.5em;
+  font-size: 0.7em;
   text-align: center;
   font-weight: bold;
 }

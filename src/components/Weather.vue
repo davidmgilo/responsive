@@ -130,6 +130,8 @@ export default {
 .forecast-day .date {
   color: black;
   font-size: 0.5em;
+  text-align: center;
+  font-weight: bold;
 }
 
 .icon {
@@ -174,6 +176,7 @@ export default {
 .visual .scale, .visual .temp {
   vertical-align: top;
 }
+
 
 @media (max-width: 650px){
   .location{

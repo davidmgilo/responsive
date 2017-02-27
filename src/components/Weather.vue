@@ -163,6 +163,18 @@ export default {
   background-image: url("../assets/rain.png");
 }
 
+.visual .temp, .visual .scale, .visual .icon{
+  display: inline-block;
+}
+
+.visual .temp{
+  font-size: 1.6em;
+}
+
+.visual .scale, .visual .temp {
+  vertical-align: top;
+}
+
 @media (max-width: 650px){
   .location{
     font-size: 5em;

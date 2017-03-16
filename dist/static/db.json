@@ -1,0 +1,11 @@
+{
+  "weather": [
+    {"date": "Monday", "icon": "stormy", "hightemp": 45, "lowtemp": 28},
+    {"date": "Tuesday", "icon": "sunny", "hightemp": 45, "lowtemp": 28},
+    {"date": "Wednesday", "icon": "sunny", "hightemp": 45, "lowtemp": 28},
+    {"date": "Thursday", "icon": "partcloudy", "hightemp": 45, "lowtemp": 28},
+    {"date": "Friday", "icon": "rainy", "hightemp": 45, "lowtemp": 28},
+    {"date": "Saturday", "icon": "rainy", "hightemp": 45, "lowtemp": 28},
+    {"date": "Sunday", "icon": "partcloudy", "hightemp": 45, "lowtemp": 28}
+  ]
+}

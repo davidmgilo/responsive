@@ -50,7 +50,7 @@ export default {
   },
   methods: {
     fetchWeather: function () {
-      this.$http.get('http://localhost:3000/weather').then((response) => {
+      this.$http.get('https://davidmgilo.github.io/weatherFakeAPI/db.json').then((response) => {
         console.log(response.data)
         this.connecting = false
         this.forecasts = response.data

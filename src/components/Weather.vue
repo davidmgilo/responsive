@@ -27,7 +27,7 @@
       </div>
     </div>
     <md-snackbar md-position="bottom center" ref="connectionError" md-duration="4000">
-      <span>Connection error. Ensure the database is open.</span>
+      <span>Connection error. Ensure the database is open. Loading default data.</span>
     </md-snackbar>
   </div>
 </template>
@@ -57,12 +57,24 @@ export default {
       }, (response) => {
         console.log(response.data)
         this.connecting = false
+        this.loadDefaultData()
         this.showConnectionError()
         this.authorized = false
       })
     },
     showConnectionError: function () {
       this.$refs.connectionError.open()
+    },
+    loadDefaultData: function () {
+      this.forecasts = [
+          {'date': 'Monday', 'icon': 'rainy', 'hightemp': 45, 'lowtemp': 28},
+          {'date': 'Tuesday', 'icon': 'stormy', 'hightemp': 45, 'lowtemp': 28},
+          {'date': 'Wednesday', 'icon': 'rainy', 'hightemp': 45, 'lowtemp': 28},
+          {'date': 'Thursday', 'icon': 'partcloudy', 'hightemp': 45, 'lowtemp': 28},
+          {'date': 'Friday', 'icon': 'rainy', 'hightemp': 45, 'lowtemp': 28},
+          {'date': 'Saturday', 'icon': 'stormy', 'hightemp': 45, 'lowtemp': 28},
+          {'date': 'Sunday', 'icon': 'sunny', 'hightemp': 45, 'lowtemp': 28}
+      ]
     }
   },
   created: function () {
